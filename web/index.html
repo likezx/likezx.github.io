@@ -1,178 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- Head tag -->
-<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-    <!--Description-->
-    
+<link rel="alternate" href="/atom.xml" title="故事的开始及其温柔。" type="application/atom+xml">
+<meta name="theme-color" content="#a1d0f6">
+<title>web - 故事的开始及其温柔。</title>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="stylesheet" href="/css/style.css">
+<nav class="main-nav">
+	
+	    <a href="/">← 主页</a>
+	
+	
+	    <a href="/">Home</a>
+	
+	    <a href="/python">Python Base</a>
+	
+	    <a href="/linux">Linux</a>
+	
+	    <a href="/sql">Sql</a>
+	
+	    <a href="/web">Web Design</a>
+	
+	    <a href="/django">Django</a>
+	
+	<a class="cta" href="/atom.xml" data-no-instant>订阅</a>
+</nav>
 
-    <!--Author-->
-    
-        <meta name="author" content="Like">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="web"/>
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Like-blog"/>
-
-    <!--Page Cover-->
-    
-        <meta property="og:image" content=""/>
-    
-
-    <!-- Title -->
-    
-    <title>web - Like-blog</title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/main.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
+<section id="wrapper">
+    <article class="post">
+    <header>
+        
+            <h1>web</h1>
+        
+        <h2 class="headline">Nov 15 2019
+        
+        </h2>
+    </header>
+</article>
+<section id="post-body"></section>
     
 
 
-    <!--Favicon-->
-    
-
-</head>
-
-<body>
-
-<!-- Menu -->
-<!-- Navigation -->
-<header>
-    <div class="logo">
-        <a href="/">Like-blog</a>
-    </div><!-- end logo -->
-
-    <div id="menu_icon"></div>
-    <nav>
-        <ul>
-            
-            <li>
-                <a href="/">Home</a>
-            </li>
-            
-            <li>
-                <a href="/archives">Archives</a>
-            </li>
-            
-            <li>
-                <a href="/python">Python Base</a>
-            </li>
-            
-            <li>
-                <a href="/linux">Linux</a>
-            </li>
-            
-            <li>
-                <a href="/sql">Sql</a>
-            </li>
-            
-            <li>
-                <a href="/web">Web Design</a>
-            </li>
-            
-            <li>
-                <a href="/django">Django</a>
-            </li>
-            
-        </ul>
-    </nav><!-- end navigation menu -->
-
-    <div class="footer clearfix">
-        <ul class="social clearfix">
-            
-            
-                <li><a href="https://www.facebook.com/" class="fb" target="_blank" data-title="Facebook"></a></li>
-            
-            
-                <li><a href="https://www.behance.net/" class="behance" target="_blank" data-title="Behance"></a></li>
-            
-            
-                <li><a href="https://plus.google.com/+Pixelhint/posts" class="google" target="_blank" data-title="Google+"></a></li>
-            
-            
-                <li><a href="https://dribbble.com/pixelhint" class="dribble" target="_blank" data-title="Dribble"></a></li>
-            
-            
-            
-            
-        </ul><!-- end social -->
-
-        <div class="rights">
-            <p>Copyright © 2014 magnetic.</p>
-            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/" target="_blank" rel="noopener">Pixelhint.com</a></p>
-            <p>Hexo Theme by <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan K.</a></p>
-        </div><!-- end rights -->
-    </div ><!-- end footer -->
-</header><!-- end header -->
+  <section id="comment">
+    <button class="btn" id="loadcmts" onclick="cmts.load();">加载评论</button>
+    <div id="gitment"></div>
+    <script src='/js/gitment.browser.js'></script>
+    <link rel="stylesheet" href=''>
+    <script>
+      var cmts={
+        load:function cmts(){
+          var gitment = new Gitment({
+          
+            id: "web",
+          
+            owner: "",
+            repo: "",
+            oauth: {
+              client_id: "",
+              client_secret: "",
+            },
+          })
+          gitment.render('gitment');
+          var loadcmt = document.getElementById("loadcmts");
+          var imyourfather = loadcmt.parentNode;
+          imyourfather.removeChild(loadcmts)
+        }
+      }
+    </script>
+  </section>
 
 
-<!-- Main Content -->
-<section class="main clearfix">
+	<footer id="footer">
+	<div id="social">
+		<p class="small">©  Like| Powered by Hexo & 
+			<a href="https://github.com/F0r3at/Lights" target="_blank" rel="noopener"> Lights</a>
+		</p>
+	</div>
+</footer>
 
-    <section class="top" style="background: url('http://placehold.it/1300x500');">
-        <div class="wrapper content_header clearfix">
-            <h1 class="title">web</h1>
-        </div>
-    </section><!-- end top -->
+</section>
 
-    <section class="wrapper">
-        <div class="content">
-
-            <!-- Gallery -->
-            
-
-            <!-- Content -->
-            
-
-            <!-- Comments -->
-            <div>
-                
+	<script src="//cdnjs.loli.net/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+	<script data-no-instant>
+		
+		InstantClick.init('mousedown');
+	</script>
 
 
 
-
-            </div>
-        </div><!-- end content -->
-    </section>
-</section><!-- end main -->
-
-<!-- After footer scripts -->
-
-<!-- jQuery -->
-<script src="/js/jquery.js"></script>
-
-<!-- Custom Code -->
-<script src="/js/main.js"></script>
-
-<!-- Gallery -->
-<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
-
-
-</body>
-
-</html>
