@@ -57,9 +57,7 @@ nginx能够正常开启就ok。（会">
 <p>nginx能够正常开启就ok。（会有端口占用问题，杀一下）</p>
 <p>在你的nginx下的conf下的文件找到nginx.conf 和nginx.conf.default</p>
 <p>加入以下代码：</p>
-<pre><code>events {
-worker_connections 1024;
-# multi_accept on;</code></pre><p>}<br>http {<br>    server {<br>        listen 80; # 监听端口<br>        server_name Good; # 访问路径名称<br>        charset utf-8; # 编码<br>        include /usr/local/nginx/conf/mime.types;  #非常重要，找到绝对路径下nginx下的mime.types,写入<br>        access_log /web/app/nginx.log;  #你的django项目绝对路径<br>        location / {<br>            include uwsgi_params;<br>            uwsgi_connect_timeout 30;<br>            uwsgi_pass  127.0.0.1:8000; # 反向代理的UWSGI端口<br>        }<br>        location /static/ {<br>            alias /web/app/static/; # 项目的静态资源路径，同样是django项目绝对路径<br>        }<br>    }<br>}</p>
+<p>events {<br>    worker_connections 1024;<br>    # multi_accept on;<br>}<br>http {<br>    server {<br>        listen 80; # 监听端口<br>        server_name Good; # 访问路径名称<br>        charset utf-8; # 编码<br>        include /usr/local/nginx/conf/mime.types;  #非常重要，找到绝对路径下nginx下的mime.types,写入<br>        access_log /web/app/nginx.log;  #你的django项目绝对路径<br>        location / {<br>            include uwsgi_params;<br>            uwsgi_connect_timeout 30;<br>            uwsgi_pass  127.0.0.1:8000; # 反向代理的UWSGI端口<br>        }<br>        location /static/ {<br>            alias /web/app/static/; # 项目的静态资源路径，同样是django项目绝对路径<br>        }<br>    }<br>}</p>
 <p>新建一个django项目，跟manage.py同级下新建一个uwsgi.ini文件。编写如下：</p>
 <p>[uwsgi]<br>socket= 127.0.0.1:8000<br>chdir=/web/app  #django项目的绝对路径<br>module=app.wsgi:application  #app为项目名<br>wsgi-file=app/wsgi.py  #app/wsgi.py<br>processes=1<br>threads=2<br>master=true<br>py-autoreload=1</p>
 <p>使用你的pip（pip3）下载完uwsgi后，给一个软连接，ln -s 源文件（一般在你安装python下的bin） /bin/</p>
